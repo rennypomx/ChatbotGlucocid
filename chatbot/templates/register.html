@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro en Glucocid</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="{% static 'css/style.css'%}" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.1/css/all.css" crossorigin="anonymous">
+</head>
+<body>
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-6 text-center">
+                <h1 class="brand">Glucocid</h1>
+                <div class="login-container">
+                    <h3>¡Únete!</h3>
+                    <p>Crea una cuenta para acceder a todas las excelentes funciones que tenemos para ti</p>
+                    <form method="post">
+                        {% csrf_token %}
+                        <div class="form-group">
+                            <input type="text" class="form-control" name="cedula" placeholder="Cédula" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" class="form-control" name="username" placeholder="Nombre de usuario" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" class="form-control" name="email" placeholder="Correo" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="password" class="form-control" name="password1" placeholder="Contraseña" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="password" class="form-control" name="password2" placeholder="Confirmar contraseña" required>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-block">Registrar</button>
+                    </form>                    
+                    <a href="{% url 'inicio' %}">Ya tengo una cuenta</a>
+                    <p>o continuar con</p>
+                    <div class="social-icons">
+                        <a href="#" class="btn btn-outline-secondary"><i class="fab fa-google"></i></a>
+                        <a href="#" class="btn btn-outline-secondary"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="btn btn-outline-secondary"><i class="fab fa-apple"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+</body>
+</html>

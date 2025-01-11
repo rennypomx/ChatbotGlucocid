@@ -1,0 +1,76 @@
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #ffffff; /* Asegura que el fondo sea blanco en toda la página */
+}
+
+.container, .row, .col-md-6 {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Estilo para el fondo con esquinas circulares en azul suave en posiciones específicas */
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    background: radial-gradient(circle at top right, #e0f0ff 30%, transparent 30%),
+                radial-gradient(circle at bottom left, #e0f0ff 30%, transparent 30%);
+    background-repeat: no-repeat;
+    background-position: top right, bottom left;
+    background-size: 50% 50%; /* Mantiene el tamaño ajustado previamente */
+}
+
+
+.brand {
+    color: #0056b3;
+    margin-bottom: 20px;
+}
+
+.login-container {
+    background: white;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    width: 600%;
+    max-width: 400px;
+}
+
+.social-icons a {
+    color: #333;
+    margin: 0 10px;
+    font-size: 24px;
+}
+
+.social-icons .btn {
+    width: 44px;
+    height: 44px;
+    border-radius: 22px;
+    border: 1px solid #ccc;
+}
+
+.form-control {
+    margin-bottom: 10px;
+}
+
+h3, p {
+    margin-bottom: 10px;
+}
+
+/* Media query para ocultar las circunferencias en pantallas pequeñas */
+@media (max-width: 768px) {
+    body::before {
+        display: none; /* Oculta el fondo con las circunferencias */
+    }
+}

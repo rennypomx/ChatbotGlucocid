@@ -1,0 +1,120 @@
+/* Fondo animado */
+.background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, #00b0b6, #00c4da, #00c8ff, #80dfff);
+    background-size: 400% 400%;
+    animation: gradientAnimation 12s ease infinite;
+    z-index: -2;
+}
+
+@keyframes gradientAnimation {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* Partículas animadas */
+.particles {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    overflow: hidden;
+}
+
+.particle {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 50%;
+    animation: moveParticles 10s linear infinite;
+    opacity: 0.8;
+}
+
+.particle:nth-child(1) { top: 10%; left: 20%; animation-duration: 8s; }
+.particle:nth-child(2) { top: 40%; left: 60%; animation-duration: 12s; }
+.particle:nth-child(3) { top: 70%; left: 30%; animation-duration: 15s; }
+.particle:nth-child(4) { top: 20%; left: 80%; animation-duration: 9s; }
+.particle:nth-child(5) { top: 90%; left: 10%; animation-duration: 11s; }
+
+@keyframes moveParticles {
+    0% { transform: translate(0, 0) scale(1); opacity: 0.8; }
+    50% { transform: translate(100px, -150px) scale(1.5); opacity: 0.6; }
+    100% { transform: translate(-50px, 100px) scale(1); opacity: 0.8; }
+}
+
+/* Estilo específico para la imagen del logo */
+.logo {
+    max-width: 70% !important; /* Reducir tamaño al 30% */
+    height: auto !important; /* Mantener proporciones */
+    margin-bottom: 1px; /* Reducir espacio con el texto */
+    display: block; /* Evitar problemas de alineación */
+    margin-left: auto; /* Centrar horizontalmente */
+    margin-right: auto;
+}
+
+
+/* Centrar el contenido y subirlo un poco */
+.content {
+    text-align: center;
+    z-index: 1;
+    position: absolute;
+    top: 40%; /* Subimos el contenido al 40% en lugar del 50% */
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/* Espaciado ajustado para el título */
+h1 {
+    margin-top: 10px; /* Reduce el espacio entre la imagen y el texto */
+    font-size: 2rem; /* Ajusta el tamaño de la fuente si es necesario */
+    color: #ffffff; /* Mantén un buen contraste con el fondo */
+}
+
+/* Estilo para el párrafo */
+p {
+    margin-top: 5px; /* Reduce el espacio entre el título y el párrafo */
+    font-size: 1.2rem;
+    color: #e0e0e0;
+}
+
+/* Estilo de los botones */
+button {
+    font-size: 18px;
+    padding: 10px 20px;
+    margin: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    display: inline-block;
+}
+
+button.btn-primary {
+    background-color: #ff6f61;
+    color: white;
+}
+
+button.btn-primary:hover {
+    background-color: #ff4c3b;
+    transform: scale(1.05);
+}
+
+button.btn-outline-primary {
+    background-color: transparent;
+    border: 2px solid #ff6f61;
+    color: #ff6f61;
+}
+
+button.btn-outline-primary:hover {
+    background-color: #ff6f61;
+    color: white;
+    transform: scale(1.05);
+}
